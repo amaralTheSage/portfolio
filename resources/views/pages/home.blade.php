@@ -3,15 +3,28 @@
 @section('content')
     <main class="text-black bg-[#e2e2e2] dark:text-white dark:bg-[#1a1a1a] w-full min-h-[78vh] rounded-md py-5 px-3 md:px-8">
         <nav class="flex justify-end items-center gap-4 light:bg-blue-300 dark:brightness-[10]">
-            <a href=""><img src="{{ asset('sun.png') }}" alt="Switch color themes" class="w-8" /></a>
+            {{-- <a href=""><img src="{{ asset('sun.png') }}" alt="Switch color themes" class="w-8" /></a>
 
             <a href=""><img src="{{ asset('lang.png') }}" alt="Switch between english and portuguese"
-                    class="w-[31px]" /></a>
+                    class="w-[31px]" /></a> --}}
 
-            <a href="{{ route('login') }}"><img src="{{ asset('login.png') }}" alt="Login Page" class="w-[26px]" /></a>
+            @guest
+                <a href="{{ route('login') }}"><img src="{{ asset('login.png') }}" alt="Login Page" class="w-[26px]" /></a>
+            @endguest
 
-            <a href="{{ route('posts.create') }}"><img src="{{ asset('more.png') }}" alt="Publishing Page"
-                    class="w-[35px]" /></a>
+            @auth
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    @method('post')
+                    <button>
+                        <img src="{{ asset('logout.png') }}" alt="Log out" class="w-[26px] mt-[6px]" />
+                    </button>
+                </form>
+
+
+                <a href="{{ route('posts.create') }}"><img src="{{ asset('more.png') }}" alt="Publishing Page"
+                        class="w-[35px]" /></a>
+            @endauth
         </nav>
 
         <section class="lg:w-2/5 md:w-3/5 w-[90%] font-semibold m-auto mt-28 xl:mt-32">

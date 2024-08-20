@@ -1,5 +1,6 @@
 @extends('Layouts.layout')
 
+
 @section('content')
     <main
         class="bg-[#E2E2E2] w-full min-h-[78vh] flex flex-col justify-between rounded-md py-6 px-4 md:px-12 dark:text-white dark:bg-[#1a1a1a]">
@@ -10,8 +11,14 @@
                 @foreach ($posts as $post)
                     <a href="{{ route('posts.show', $post->id) }}">
                         <div>
-                            <img src="{{ $post->getImageURL() }}" alt=""
-                                class="aspect-video object-cover rounded-t-md" />
+
+                            @foreach ($post->images as $image)
+                                @if ($loop->first)
+                                    <img src="{{ $post->getImageUrl($image->address) }}" alt=""
+                                        class="aspect-video object-cover rounded-t-md" />
+                                @endif
+                            @endforeach
+
                             <div class="flex flex-col gap-1 p-1">
                                 <h3 class="uppercase font-semibold">{{ $post->title }}</h3>
                                 <p class="text-sm text-justify">

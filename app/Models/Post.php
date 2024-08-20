@@ -10,21 +10,23 @@ class Post extends Model
 {
     use HasUuids;
 
-
-
     protected $fillable = [
         'title',
         'techs',
         'short_description',
         'description',
-        'images',
         'website',
         'github',
     ];
 
-    public function getImageURL()
+    public function getImageURL($address)
     {
-        return url('storage/' . $this->images);
+        return url('storage/' . $address);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
     }
 
     use HasFactory;

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text('description');
             $table->text('website');
             $table->text('github');
-            $table->string('images');
 
             $table->timestamps();
         });

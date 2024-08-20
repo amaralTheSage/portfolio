@@ -14,7 +14,7 @@
             <div class="flex flex-col gap-2 min-w-0">
                 <div class="flex flex-col">
                     <label for="images" class="font-semibold text-lg">Images</label>
-                    <input type="file" accept="image/*" name="images" />
+                    <input type="file" accept="image/*" multiple name="images[]" />
 
                     @error('images')
                         <p class="text-red-500 text-sm">{{ $message }}</p>

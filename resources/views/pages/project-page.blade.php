@@ -7,16 +7,24 @@
 
         <section class="md:mx-6 lg:mx-8 my-6 grid lg:grid-cols-2 gap-6">
             <div>
-                <img src="{{ $post->getImageURL() }}" alt="" class="aspect-video w-full object-cover rounded-md" />
+
+                @foreach ($post->images as $image)
+                    @if ($loop->first)
+                        <img src="{{ $post->getImageURL($image->address) }}" alt=""
+                            class="aspect-video w-full object-cover rounded-md" />
+                    @endif
+                @endforeach
+
 
                 <div class="grid grid-cols-3 gap-3 mt-2">
-                    <img src="{{ $post->getImageURL() }}" alt="" class="aspect-video object-cover rounded-md w-full" />
+                    @foreach ($post->images as $image)
+                        @if (!$loop->first)
+                            <img src="{{ $post->getImageURL($image->address) }}" alt=""
+                                class="aspect-video object-cover rounded-md w-full" />
+                        @endif
+                    @endforeach
 
-                    <img src="{{ $post->getImageURL() }}" alt=""
-                        class="aspect-video object-cover rounded-md w-full" />
 
-                    <img src="{{ $post->getImageURL() }}" alt=""
-                        class="aspect-video object-cover rounded-md w-full" />
                 </div>
             </div>
 

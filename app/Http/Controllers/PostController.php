@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Post;
+use Exception;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -24,27 +26,36 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
         $validated = $request->validate([
             'title' => ['required'],
             'techs' => ['required'],
             'short_description' => ['required'],
             'description' => ['required'],
-            'images' => ['required'],
         ]);
 
-        $imagePath = $request->file('images')->store('projects', 'public');
+        try {
+            Post::create([
+                'title' => $validated['title'],
+                'techs' => $validated['techs'],
+                'short_description' => $validated['short_description'],
+                'description' => $validated['description'],
+                'website' => $request['website'],
+                'github' => $request['github'],
+            ]);
+        } catch (Exception $e) {
+            dump($e);
+        } finally {
+            $post = Post::where('title', '=', $validated['title'])->first();
 
-        $validated['images'] = $imagePath;
-
-        Post::create([
-            'title' => $validated['title'],
-            'techs' => $validated['techs'],
-            'short_description' => $validated['short_description'],
-            'description' => $validated['description'],
-            'images' => $validated['images'] ?? 'NAO DEU CERTO',
-            'website' => $request['website'],
-            'github' => $request['github'],
-        ]);
+            foreach ($request->images as $image) {
+                $imagePath = $image->store('projects/'.$post->id, 'public');
+                Image::create([
+                    'post_id' => $post->id,
+                    'address' => $imagePath,
+                ]);
+            }
+        }
 
         return to_route('posts.index');
     }
