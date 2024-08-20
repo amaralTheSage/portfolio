@@ -1,5 +1,6 @@
 {
     "scripts": {
-        "predeploy": "php artisan db:seed --force"
+        "build": "composer install --optimize-autoloader --no-dev && npm install && npm run build",
+        "start": "php artisan migrate --force && php artisan db:seed --force"
     }
 }
