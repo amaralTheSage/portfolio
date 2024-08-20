@@ -1,5 +1,5 @@
 {
     "scripts": {
-        "predeploy": "php artisan db:seed"
+        "predeploy": "php artisan db:seed --force"
     }
 }
