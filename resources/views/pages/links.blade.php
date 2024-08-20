@@ -1,5 +1,8 @@
 @extends('Layouts.layout')
 
+@section('title', 'Links')
+
+
 @section('content')
     <main class="bg-[#E2E2E2] w-full min-h-[78vh] rounded-md py-5 px-3 md:px-8 dark:text-white dark:bg-[#1a1a1a]">
         <!-- BACK BUTTON -->

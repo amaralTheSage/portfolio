@@ -1,5 +1,8 @@
 @extends('Layouts.layout')
 
+@section('title', strtoupper($post->title))
+
+
 @section('content')
     <main
         class="bg-[#E2E2E2] w-full min-h-[78vh] rounded-md py-6 px-4 md:px-12 flex flex-col justify-between dark:text-white dark:bg-[#1a1a1a]">

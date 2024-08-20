@@ -1,5 +1,7 @@
 @extends('Layouts.layout')
 
+@section('title', 'Home')
+
 @section('content')
     <main class="text-black bg-[#e2e2e2] dark:text-white dark:bg-[#1a1a1a] w-full min-h-[78vh] rounded-md py-5 px-3 md:px-8">
         <nav class="flex justify-end items-center gap-4 light:bg-blue-300 dark:brightness-[10]">

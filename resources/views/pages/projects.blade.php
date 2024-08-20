@@ -1,5 +1,7 @@
 @extends('Layouts.layout')
 
+@section('title', 'Projects')
+
 
 @section('content')
     <main
