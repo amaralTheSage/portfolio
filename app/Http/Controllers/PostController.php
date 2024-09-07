@@ -6,6 +6,7 @@ use App\Models\Image;
 use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -49,7 +50,8 @@ class PostController extends Controller
             $post = Post::where('title', '=', $validated['title'])->first();
 
             foreach ($request->images as $image) {
-                $imagePath = $image->store('projects/'.$post->id, 'public');
+                $imagePath = Storage::disk('public')->putFile('projects/' . $post->id, $image);
+                // $imagePath = $image->store();
                 Image::create([
                     'post_id' => $post->id,
                     'address' => $imagePath,

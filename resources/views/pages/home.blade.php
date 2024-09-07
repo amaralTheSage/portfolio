@@ -11,7 +11,7 @@
                     class="w-[31px]" /></a> --}}
 
             @guest
-                <a href="{{ route('login') }}"><img src="{{ asset('login.png') }}" alt="Login Page" class="w-[26px]" /></a>
+                <a href="{{ route('login') }}"><img src="{{ asset('img/login.png') }}" alt="Login Page" class="w-[26px]" /></a>
             @endguest
 
             @auth
@@ -19,12 +19,12 @@
                     @csrf
                     @method('post')
                     <button>
-                        <img src="{{ asset('logout.png') }}" alt="Log out" class="w-[26px] mt-[6px]" />
+                        <img src="{{ asset('img/logout.png') }}" alt="Log out" class="w-[26px] mt-[6px]" />
                     </button>
                 </form>
 
 
-                <a href="{{ route('posts.create') }}"><img src="{{ asset('more.png') }}" alt="Publishing Page"
+                <a href="{{ route('posts.create') }}"><img src="{{ asset('img/more.png') }}" alt="Publishing Page"
                         class="w-[35px]" /></a>
             @endauth
         </nav>
@@ -37,11 +37,11 @@
             </p>
 
             <nav class="flex flex-wrap gap-x-10 gap-y-5 justify-evenly mt-8 dark:brightness-[10]">
-                <a href="{{ route('posts.index') }}" class="flex gap-2 items-center"><img src="{{ asset('arrow.png') }}"
+                <a href="{{ route('posts.index') }}" class="flex gap-2 items-center"><img src="{{ asset('img/arrow.png') }}"
                         alt="arrow icon" class="h-4" /> my
                     projects</a>
 
-                <a href="{{ route('links') }}" class="flex gap-2 items-center"><img src="{{ asset('arrow.png') }}"
+                <a href="{{ route('links') }}" class="flex gap-2 items-center"><img src="{{ asset('img/arrow.png') }}"
                         alt="arrow icon" class="h-4" /> my
                     links</a>
             </nav>

@@ -17,7 +17,7 @@
 
 
             <div class="text-center">
-                <img src="{{ asset('amaral.png') }}" alt="amaral" class="w-32 my-2" />
+                <img src="{{ asset('img/amaral.png') }}" alt="amaral" class="w-32 my-2" />
 
                 <p>amaral</p>
             </div>
