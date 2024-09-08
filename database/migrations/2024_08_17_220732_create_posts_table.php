@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('techs');
             $table->text('short_description');
             $table->text('description');
-            $table->text('website');
-            $table->text('github');
+            $table->text('website')->nullable();
+            $table->text('github')->nullable();
 
             $table->timestamps();
         });

@@ -50,11 +50,11 @@
                 <div class="my-2">
                     <h3 class="font-semibold">Links</h3>
                     <div class="font-medium mb-1 rounded-md flex justify-between">
-                        <span>Website: </span> <span>{{ $post->website }}</span>
+                        <span>Website: </span> <span>{{ $post->website ?? 'Not yet available' }}</span>
                     </div>
 
                     <div class="font-medium mb-1 rounded-md flex justify-between">
-                        <span>GitHub: </span> <span>{{ $post->github }}</span>
+                        <span>GitHub: </span> <span>{{ $post->github ?? 'Not yet available' }}</span>
                     </div>
 
                 </div>
