@@ -31,7 +31,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => ['required'],
             'techs' => ['required'],
-            'short_description' => ['required'],
+            'short_description' => ['required', 'max:127', 'min:90'],
             'description' => ['required'],
         ]);
 
