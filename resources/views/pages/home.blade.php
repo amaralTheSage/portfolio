@@ -32,7 +32,7 @@
         <section class="lg:w-2/5 md:w-3/5 w-[90%] font-semibold m-auto mt-28 xl:mt-32">
             <p class="text-justify m-auto text-lg">
                 I am a student of Web Development with a couple of full stack
-                posts under the belt. I now seek to continue improving my design
+                projects under the belt. I now seek to continue improving my design
                 and coding skills.
             </p>
 
