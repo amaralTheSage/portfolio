@@ -6,7 +6,7 @@
 @section('content')
     <main
         class="bg-[#E2E2E2] w-full min-h-[78vh] rounded-md py-6 px-4 md:px-12 flex flex-col justify-between dark:text-white dark:bg-[#1a1a1a]">
-        <header class="border-gray-400 border-b uppercase">PORTFOLIO</header>
+        <header class="border-gray-400 border-b uppercase">Projects</header>
 
         <section class="md:mx-6 lg:mx-8 my-6 grid lg:grid-cols-2 gap-6">
             <div>
