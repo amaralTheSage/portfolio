@@ -14,7 +14,7 @@
                 @foreach ($post->images as $image)
                     @if ($loop->first)
                         <img src="{{ $post->getImageURL($image->address) }}" alt=""
-                            class="aspect-video w-full object-cover rounded-md" />
+                            class="aspect-video w-full object-cover rounded-md shadow-md" />
                     @endif
                 @endforeach
 
@@ -23,7 +23,7 @@
                     @foreach ($post->images as $image)
                         @if (!$loop->first)
                             <img src="{{ $post->getImageURL($image->address) }}" alt=""
-                                class="aspect-video object-cover rounded-md w-full" />
+                                class="aspect-video object-cover rounded-md w-full shadow-md" />
                         @endif
                     @endforeach
 
