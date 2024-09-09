@@ -5,11 +5,11 @@
 
 @section('content')
     <main
-        class="bg-[#E2E2E2] w-full min-h-[78vh] rounded-md py-6 px-4 md:px-12 flex flex-col justify-between dark:text-white dark:bg-[#1a1a1a]">
+        class="bg-[#E2E2E2] w-full min-h-[78vh] rounded-md py-6 px-6 md:px-12 flex flex-col justify-between dark:text-white dark:bg-[#1a1a1a] ">
         <header class="border-gray-400 border-b uppercase">Projects</header>
 
-        <section class="md:mx-6 lg:mx-8 my-6 grid lg:grid-cols-2 gap-6">
-            <div>
+        <section class="md:mx-6 lg:mx-8 my-6 grid lg:grid-cols-2 gap-6 min-w-0">
+            <div class="min-w-0">
 
                 @foreach ($post->images as $image)
                     @if ($loop->first)
@@ -19,11 +19,11 @@
                 @endforeach
 
 
-                <div class="grid grid-cols-3 gap-3 mt-2">
+                <div class="grid sm:grid-cols-3 grid-cols-none gap-3 mt-2">
                     @foreach ($post->images as $image)
                         @if (!$loop->first)
                             <img src="{{ $post->getImageURL($image->address) }}" alt=""
-                                class="aspect-video object-cover rounded-md w-full shadow-md" />
+                                class="aspect-video object-cover rounded-md w-full shadow-md min-w-0 min-h-0" />
                         @endif
                     @endforeach
 
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="flex flex-col gap-1 p-1">
+            <div class="flex flex-col gap-1 p-1 min-w-0">
                 <h3 class="uppercase font-semibold">{{ $post->title }}</h3>
                 <p class="text-sm text-justify">
                     {{ $post->description }}
@@ -49,15 +49,17 @@
 
                 <div class="my-2">
                     <h3 class="font-semibold">Links</h3>
-                    <a href="{{ $post->website }}">
-                        <div class="font-medium mb-1 rounded-md flex justify-between">
-                            <span>Website: </span> <span>{{ $post->website ?? 'Not yet available' }}</span>
+                    <a href="https://{{ $post->website }}">
+                        <div class="font-medium mb-1 rounded-md flex justify-between flex-wrap">
+                            <span>Website: </span> <span
+                                class="break-words break-all">{{ $post->website ?? 'Not yet available' }}</span>
                         </div>
                     </a>
 
-                    <a href="{{ $post->github }}">
-                        <div class="font-medium mb-1 rounded-md flex justify-between">
-                            <span>GitHub: </span> <span>{{ $post->github ?? 'Not yet available' }}</span>
+                    <a href="https://{{ $post->github }}">
+                        <div class="font-medium mb-1 rounded-md flex justify-between flex-wrap">
+                            <span>GitHub: </span> <span
+                                class="break-words break-all">{{ $post->github ?? 'Not yet available' }}</span>
                         </div>
                     </a>
                 </div>

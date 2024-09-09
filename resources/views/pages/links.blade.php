@@ -14,7 +14,7 @@
                 Contact & Links
             </h1>
 
-            <nav class="font-semibold m-auto pt-8 px-6 gap-1 text-lg flex flex-col">
+            <nav class="font-semibold m-auto pt-8 sm:px-6 gap-1 text-lg flex flex-col ">
                 <a href="https://www.linkedin.com/in/gabriel-de-souza-a-39899b289/" target="_blank"
                     class="w-fit duration-200">Linkedin</a>
                 <a href="https://github.com/amaralTheSage" target="_blank" class="w-fit duration-200">GitHub</a>
