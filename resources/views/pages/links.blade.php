@@ -19,7 +19,7 @@
                 <a href="https://github.com/amaralTheSage" class="w-fit duration-200">GitHub</a>
                 <a href="mailto: amaraldesouza9@gmail.com" class="w-fit duration-200">Email <span
                         class="text-sm">(amaraldesouza9@gmail.com)</span></a>
-                <a href="{{ route('download_resume') }}" download class="w-fit duration-200">Resume</a>
+                <a href="Currículo.pdf" target="_blank" class="w-fit duration-200">Resume</a>
 
                 <a href="https://www.youtube.com/@amaral.61" class="w-fit duration-200">Youtube
                     <span class="text-sm">(there are a few guitar covers in there)</span></a>

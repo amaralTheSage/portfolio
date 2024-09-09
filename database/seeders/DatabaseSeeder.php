@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        $contents = file_get_contents(public_path("path do arquivo existente em public"));
+
         User::create([
             'name' => env('ADMIN_NAME'),
             'email' => env('ADMIN_EMAIL'),
