@@ -49,14 +49,17 @@
 
                 <div class="my-2">
                     <h3 class="font-semibold">Links</h3>
-                    <div class="font-medium mb-1 rounded-md flex justify-between">
-                        <span>Website: </span> <span>{{ $post->website ?? 'Not yet available' }}</span>
-                    </div>
+                    <a href="{{ $post->website }}">
+                        <div class="font-medium mb-1 rounded-md flex justify-between">
+                            <span>Website: </span> <span>{{ $post->website ?? 'Not yet available' }}</span>
+                        </div>
+                    </a>
 
-                    <div class="font-medium mb-1 rounded-md flex justify-between">
-                        <span>GitHub: </span> <span>{{ $post->github ?? 'Not yet available' }}</span>
-                    </div>
-
+                    <a href="{{ $post->github }}">
+                        <div class="font-medium mb-1 rounded-md flex justify-between">
+                            <span>GitHub: </span> <span>{{ $post->github ?? 'Not yet available' }}</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
