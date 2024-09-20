@@ -10,9 +10,11 @@ function ProjectPage({ post, arrow, images }) {
                 <header className="border-gray-400 border-b uppercase">
                     Projects
                 </header>
-                <section className="md:mx-6 lg:mx-8 my-6 grid xl:grid-cols-5 gap-6 min-w-0">
+                <section className="md:mx-6 lg:mx-8 my-6 flex flex-col xl:grid xl:grid-cols-5 gap-6 min-w-0">
                     <div className="min-w-0 col-span-3">
                         <Carousel imgs={images} post={post} arrow={arrow} />
+
+                        {/* Section right of image (big screens) */}
                         <div className="hidden mt-2 xl:flex flex-col gap-1">
                             <div className="my-2">
                                 <h3 className="font-semibold">Techs Used</h3>
@@ -51,7 +53,9 @@ function ProjectPage({ post, arrow, images }) {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-1 px-1 min-w-0 col-span-2">
+
+                    {/* Section under image (small screens) */}
+                    <div className="flex flex-col gap-1 px-1 min-w-0  col-span-2">
                         <h3 className="uppercase font-semibold">
                             {post.title}
                         </h3>
