@@ -26,7 +26,7 @@ export default function Carousel({ imgs }) {
                                 <img
                                     key={img.id}
                                     src={img.url}
-                                    className="embla__slide w-full object-cover aspect-video rounded-md"
+                                    className="embla__slide mx-4 w-full object-cover aspect-video rounded-md"
                                 />
                             </>
                         );
@@ -36,16 +36,20 @@ export default function Carousel({ imgs }) {
 
             <div className="w-full px-5 absolute top-[45%] gap-2 flex justify-between">
                 <button
-                    className="embla__prev bg-gray-500 p-1  rounded-full "
+                    className="embla__prev bg-black p-1 border-gray-700 border rounded-full "
                     onClick={scrollPrev}
                 >
-                    <ChevronLeft />
+                    <div className="relative right-px">
+                        <ChevronLeft />
+                    </div>
                 </button>
                 <button
-                    className="embla__next bg-gray-500 p-1 rounded-full"
+                    className="embla__next bg-black border-gray-700 border p-1 rounded-full"
                     onClick={scrollNext}
                 >
-                    <ChevronRight />
+                    <div className="relative left-px">
+                        <ChevronRight />
+                    </div>
                 </button>
             </div>
         </div>
