@@ -27,7 +27,6 @@ class PostController extends Controller
         });
 
 
-
         return Inertia::render('ProjectPage', ['post' => $p, 'arrow' => asset('img/arrow.png'), 'images' => $images]);
         // return view('pages.project-page', ['post' => $post]);
     }

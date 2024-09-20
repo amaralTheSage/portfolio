@@ -34,7 +34,7 @@
             <div class="flex flex-col gap-1 p-1 min-w-0">
                 <h3 class="uppercase font-semibold">{{ $post->title }}</h3>
                 <p class="text-sm text-justify">
-                    {{ $post->description }}
+                    {{-- {{ $post->description }} --}}
                 </p>
 
                 <div class="my-2">

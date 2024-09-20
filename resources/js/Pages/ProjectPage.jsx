@@ -60,7 +60,13 @@ function ProjectPage({ post, arrow, images }) {
                             {post.title}
                         </h3>
                         <p className="text-sm text-justify">
-                            {post.description}
+                            {post.description.split("\n").map((line, index) => (
+                                <span key={index}>
+                                    {line}
+                                    <br />
+                                    <br />
+                                </span>
+                            ))}
                         </p>
                         <div className="xl:hidden flex flex-col gap-1">
                             <div className="my-2">
