@@ -13,14 +13,20 @@ function ProjectPage({ post, arrow, images }) {
                 <section className="md:mx-6 lg:mx-8 my-6 grid xl:grid-cols-5 gap-6 min-w-0">
                     <div className="min-w-0 col-span-3">
                         <Carousel imgs={images} post={post} arrow={arrow} />
-                        <div className="hidden xl:block mt-2">
+                        <div className="hidden mt-2 xl:flex flex-col gap-1">
                             <div className="my-2">
                                 <h3 className="font-semibold">Techs Used</h3>
                                 <div className="flex gap-1 flex-wrap text-white dark:text-black">
-                                    {/* @foreach (explode(' ', post.techs) as $tech)
-                                <span
-                                    className="bg-black dark:bg-white p-1 px-[14px] font-medium rounded-md">{ $tech }</span>
-                            @endforeach */}
+                                    {post.techs.split(" ").map((tech) => {
+                                        return (
+                                            <span
+                                                key={tech}
+                                                className="bg-black dark:bg-white p-1 px-[14px] font-medium rounded-md"
+                                            >
+                                                {tech}
+                                            </span>
+                                        );
+                                    })}
                                 </div>
                             </div>
                             <div className="my-2">
@@ -52,14 +58,20 @@ function ProjectPage({ post, arrow, images }) {
                         <p className="text-sm text-justify">
                             {post.description}
                         </p>
-                        <div className="xl:hidden">
+                        <div className="xl:hidden flex flex-col gap-1">
                             <div className="my-2">
                                 <h3 className="font-semibold">Techs Used</h3>
                                 <div className="flex gap-1 flex-wrap text-white dark:text-black">
-                                    {/* @foreach (explode(' ', post.techs) as $tech)
-                                <span
-                                    className="bg-black dark:bg-white p-1 px-[14px] font-medium rounded-md">{ $tech }</span>
-                            @endforeach */}
+                                    {post.techs.split(" ").map((tech) => {
+                                        return (
+                                            <span
+                                                key={tech}
+                                                className="bg-black dark:bg-white p-1 px-[14px] font-medium rounded-md"
+                                            >
+                                                {tech}
+                                            </span>
+                                        );
+                                    })}
                                 </div>
                             </div>
                             <div className="my-2">
