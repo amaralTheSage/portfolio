@@ -7,6 +7,7 @@ use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Inertia\Inertia;
 
 class PostController extends Controller
 {
@@ -17,7 +18,18 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return view('pages.project-page', ['post' => $post]);
+
+        $p = Post::with(['images'])->findOrFail($post->id);
+
+        $post->images->transform(function ($image) {
+            $image->url = url('storage/' . $image->address);
+            return $image;
+        });
+
+
+
+        return Inertia::render('ProjectPage', ['post' => $p]);
+        // return view('pages.project-page', ['post' => $post]);
     }
 
     public function create()

@@ -11,11 +11,10 @@ class AuthController extends Controller
     {
         $validated = $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         $authenticated = Auth::attempt(['email' => $validated['email'], 'password' => $validated['password']]);
-
 
         if ($authenticated) {
             $request->session()->regenerate();
@@ -25,7 +24,6 @@ class AuthController extends Controller
 
         return to_route('login')->with('fail', 'Incorrect Email or Password');
     }
-
 
     public function logout(Request $request)
     {

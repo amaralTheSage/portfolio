@@ -39,7 +39,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL') . '/storage',
+            'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -58,17 +58,17 @@ return [
 
         'supabase' => [
             'driver' => 'supabase',
-            'key'    => env('SUPABASE_STORAGE_KEY'), // Use a privileged key; read-only does not work
+            'key' => env('SUPABASE_STORAGE_KEY'), // Use a privileged key; read-only does not work
             'bucket' => env('SUPABASE_STORAGE_BUCKET'),
             'endpoint' => env('SUPABASE_STORAGE_ENDPOINT'),
 
-            'url'      => null, // <- Automatically generated; change here if you are using a proxy
+            'url' => null, // <- Automatically generated; change here if you are using a proxy
 
-            'public'                      => true,  // Default to true
-            'defaultUrlGeneration'        => null, // 'signed' | 'public' <- default depends on public
+            'public' => true,  // Default to true
+            'defaultUrlGeneration' => null, // 'signed' | 'public' <- default depends on public
 
             'defaultUrlGenerationOptions' => [
-                'download'  => false,
+                'download' => false,
                 'transform' => [],
             ],
 

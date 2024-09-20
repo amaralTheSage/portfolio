@@ -10,6 +10,17 @@ body {
     background-image: url("../../public/img/portfolio_background.png");
 }
 
+.embla {
+    overflow: hidden;
+}
+.embla__container {
+    display: flex;
+}
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
 .text-shadow {
     text-shadow: black 0px 3px 2px;
 }
