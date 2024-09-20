@@ -28,7 +28,7 @@ class PostController extends Controller
 
 
 
-        return Inertia::render('ProjectPage', ['post' => $p]);
+        return Inertia::render('ProjectPage', ['post' => $p, 'arrow' => asset('img/arrow.png')]);
         // return view('pages.project-page', ['post' => $post]);
     }
 

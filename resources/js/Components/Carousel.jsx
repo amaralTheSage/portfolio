@@ -17,7 +17,7 @@ export default function Carousel({ post, imgs }) {
     }, [emblaApi]);
 
     return (
-        <div className="embla m-auto relative">
+        <div className="embla m-auto relative ">
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container ">
                     {imgs.map((img) => {
