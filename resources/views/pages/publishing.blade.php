@@ -8,7 +8,7 @@
         class="bg-[#E2E2E2] dark:text-white dark:bg-[#1a1a1a] w-full min-h-[78vh] rounded-md py-6 px-4 md:px-12 flex flex-col justify-between">
         <header class="border-gray-400 border-b uppercase">Publishing</header>
 
-        <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data"
+        <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data"
             class="md:mx-10 lg:mx-20 my-6 grid md:grid-cols-2 lg:gap-16 md:gap-8 gap-4 m-auto min-w-0">
             @csrf
             @method('post')
