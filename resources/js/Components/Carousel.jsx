@@ -3,7 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "react-feather";
 
-export default function Carousel({ post, imgs }) {
+export default function Carousel({ imgs }) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
         Autoplay({ delay: 5000 }),
     ]);
@@ -21,7 +21,6 @@ export default function Carousel({ post, imgs }) {
             <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container ">
                     {imgs.map((img) => {
-                        console.log(img);
                         return (
                             <>
                                 <img

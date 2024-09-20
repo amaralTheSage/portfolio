@@ -21,7 +21,7 @@ class Post extends Model
 
     public function getImageURL($address)
     {
-        return url('storage/'.$address);
+        return url('storage/' . $address);
     }
 
     public function images()

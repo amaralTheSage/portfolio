@@ -8,6 +8,7 @@
         class="bg-[#E2E2E2] w-full min-h-[78vh] flex flex-col justify-between rounded-md py-6 px-4 md:px-12 dark:text-white dark:bg-[#1a1a1a]">
         <header class="border-gray-400 border-b uppercase">Projects</header>
 
+
         <section>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 md:mx-8 my-6">
                 @foreach ($posts as $post)

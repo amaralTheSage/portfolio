@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "../Components/Carousel";
 import { Head } from "@inertiajs/react";
 
-function ProjectPage({ post, arrow }) {
+function ProjectPage({ post, arrow, images }) {
     return (
         <>
             <Head title={`Gabriel Amaral | ${post.title}`} />
@@ -12,11 +12,7 @@ function ProjectPage({ post, arrow }) {
                 </header>
                 <section className="md:mx-6 lg:mx-8 my-6 grid xl:grid-cols-5 gap-6 min-w-0">
                     <div className="min-w-0 col-span-3">
-                        <Carousel
-                            imgs={post.images}
-                            post={post}
-                            arrow={arrow}
-                        />
+                        <Carousel imgs={images} post={post} arrow={arrow} />
                         <div className="hidden xl:block mt-2">
                             <div className="my-2">
                                 <h3 className="font-semibold">Techs Used</h3>

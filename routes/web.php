@@ -9,12 +9,12 @@ Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::get('/projects', [PostController::class, 'index'])->name('posts.index');
+Route::get('/projects/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/create', [PostController::class, 'create'])->name('posts.create')->middleware('auth');
 
-Route::resource('/posts', PostController::class)->only(['store', 'delete'])->middleware('auth');
+Route::resource('/projects', PostController::class)->only(['store', 'delete'])->middleware('auth');
 
 Route::get('/links', function () {
     return view('pages.links');

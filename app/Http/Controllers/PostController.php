@@ -21,14 +21,14 @@ class PostController extends Controller
 
         $p = Post::with(['images'])->findOrFail($post->id);
 
-        $post->images->transform(function ($image) {
-            $image->url = url('storage/' . $image->address);
+        $images = $post->images->map(function ($image) {
+            $image->url = $image->address ? url('storage/' . $image->address) : 'deu pau';
             return $image;
         });
 
 
 
-        return Inertia::render('ProjectPage', ['post' => $p, 'arrow' => asset('img/arrow.png')]);
+        return Inertia::render('ProjectPage', ['post' => $p, 'arrow' => asset('img/arrow.png'), 'images' => $images]);
         // return view('pages.project-page', ['post' => $post]);
     }
 
