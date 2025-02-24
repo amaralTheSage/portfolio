@@ -1,14 +1,16 @@
 import React from "react";
 import Carousel from "../Components/Carousel";
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 
-function ProjectPage({ post, arrow, images }) {
+function ProjectPage({ post, arrow, images, isLoggedIn }) {
     return (
         <>
             <Head title={`Gabriel Amaral | ${post.title}`} />
             <main className="bg-[#E2E2E2] w-full min-h-[78vh] rounded-md py-6 px-6 md:px-12 flex flex-col justify-between dark:text-white dark:bg-[#1a1a1a]">
-                <header className="border-gray-400 border-b uppercase">
-                    Projects
+                <header className="border-gray-400 border-b uppercase flex justify-between">
+                    <h1>Projects</h1>
+
+                    {isLoggedIn && <a href={`/edit/${post.id}`}>Edit</a>}
                 </header>
                 <section className="md:mx-6 lg:mx-8 my-6 flex flex-col xl:grid xl:grid-cols-5 gap-6 min-w-0">
                     <div className="min-w-0 col-span-3">

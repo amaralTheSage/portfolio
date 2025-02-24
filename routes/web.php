@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,6 +14,13 @@ Route::get('/projects', [PostController::class, 'index'])->name('posts.index');
 Route::get('/projects/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/create', [PostController::class, 'create'])->name('posts.create')->middleware('auth');
+
+Route::get(
+    '/edit/{post}',
+    [PostController::class, 'edit']
+)->name('posts.edit')->middleware('auth');
+
+Route::patch('/edit/{post}', [PostController::class, 'update'])->name('posts.update')->middleware('auth');
 
 Route::resource('/projects', PostController::class)->only(['store', 'delete'])->middleware('auth');
 

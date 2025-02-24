@@ -2,11 +2,14 @@
 
 @section('title', strtoupper($post->title))
 
+{{-- PAGE NOT BEING USED --}}
 
 @section('content')
     <main
         class="bg-[#E2E2E2] w-full min-h-[78vh] rounded-md py-6 px-6 md:px-12 flex flex-col justify-between dark:text-white dark:bg-[#1a1a1a] ">
-        <header class="border-gray-400 border-b uppercase">Projects</header>
+        <header class="border-gray-400 border-b uppercase">
+            <h1>Projects</h1>
+        </header>
 
         <section class="md:mx-6 lg:mx-8 my-6 grid lg:grid-cols-2 gap-6 min-w-0">
             <div class="min-w-0">

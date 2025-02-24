@@ -6,8 +6,10 @@ use App\Models\Image;
 use App\Models\Post;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class PostController extends Controller
 {
@@ -27,7 +29,7 @@ class PostController extends Controller
         });
 
 
-        return Inertia::render('ProjectPage', ['post' => $p, 'arrow' => asset('img/arrow.png'), 'images' => $images]);
+        return Inertia::render('ProjectPage', ['post' => $p, 'arrow' => asset('img/arrow.png'), 'images' => $images, 'isLoggedIn' => Auth::check()]);
         // return view('pages.project-page', ['post' => $post]);
     }
 
@@ -42,7 +44,7 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => ['required'],
             'techs' => ['required'],
-            'short_description' => ['required', 'max:127', 'min:90'],
+            'short_description' => ['required', 'max:129', 'min:86'],
             'description' => ['required'],
         ]);
 
@@ -71,5 +73,34 @@ class PostController extends Controller
         }
 
         return to_route('posts.index');
+    }
+
+
+    public function edit(Post $post)
+    {
+        return view('pages.edit', ["post" => $post]);
+    }
+
+
+    public function update(Request $request, Post $post)
+    {
+
+        $validated = $request->validate([
+            'title' => ['required'],
+            'techs' => ['required'],
+            'short_description' => ['required', 'max:127', 'min:90'],
+            'description' => ['required'],
+        ]);
+
+        $post->update([
+            'title' => $validated['title'],
+            'techs' => $validated['techs'],
+            'short_description' => $validated['short_description'],
+            'description' => $validated['description'],
+            'website' => $request['website'],
+            'github' => $request['github'],
+        ]);
+
+        return to_route('posts.show', ['post' => $post]);
     }
 }
