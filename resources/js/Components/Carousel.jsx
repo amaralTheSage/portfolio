@@ -30,7 +30,7 @@ export default function Carousel({ imgs }) {
                                 <img
                                     key={img.id}
                                     src={img.url}
-                                    className="embla__slide mx-4 w-full object-cover aspect-video rounded-md"
+                                    className="embla__slide mx-4 w-full object-cover aspect-[2/1] rounded-md"
                                 />
                             </>
                         );
